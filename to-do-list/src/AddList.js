@@ -4,11 +4,11 @@ import { TaskContext } from './TaskContext';
 
 
 function AddList() {
-  const { tasks, setTasks } = useContext(TaskContext);
+  // const { tasks, setTasks } = useContext(TaskContext);
   
   // const [tasks, setTasks] = 
   // useState([]);
-  const [taskText, setTaskText] = useState('');
+  // const [taskText, setTaskText] = useState('');
 
   // const addTask = () => {
   //   setTasks([...tasks, taskText]);
