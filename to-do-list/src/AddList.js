@@ -1,15 +1,19 @@
 import "./AddList.css"
-import "./TaskList"
-import ListItems from "./ListItems"
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { TaskContext } from './TaskContext';
 
 
 function AddList() {
-    const [isButtonPressed, setIsButtonPressed] = useState(false);
-    const handleButtonClick = () => {
-        setIsButtonPressed(true);
-    };
+  const { tasks, setTasks } = useContext(TaskContext);
+  
+  // const [tasks, setTasks] = 
+  // useState([]);
+  const [taskText, setTaskText] = useState('');
 
+  // const addTask = () => {
+  //   setTasks([...tasks, taskText]);
+  //   setTaskText("");
+  // };
 
 
 
@@ -17,9 +21,10 @@ function AddList() {
       <div className="AddList">
         
         <header className="Add-Listing">
-          <h3><input type = "button" value = "Add new task" onClick={handleButtonClick}/>
-          {isButtonPressed ? ListItems.push("new task") : null}
-          </h3>
+          <h3>
+            <input type = "text" value = 'louie'></input>
+            <input type = "button" value = "New task" onClick={null}/>
+            </h3>
         </header>
       </div>
     );

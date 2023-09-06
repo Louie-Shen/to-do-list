@@ -1,20 +1,38 @@
 import "./TaskList.css"
+// import tasks from "./AddList"
+import { TaskContext } from './TaskContext';
+import { useContext,useState } from 'react';
+
 
 function TaskList() {
-  const ListItems = [];
+
+  const { tasks } = useContext(TaskContext);
 
   return (
-    <div className="TaskList">
-      <header className="App-header">
-        <ul>{
-        ListItems.map((item, index) => (
-          <ul key={index}> {item} <input type = "checkbox"/> </ul>
-        ))}
-        <hr/>
-          </ul>
-      </header>
+    <div>
+
+    <ul>
+      {tasks.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+
+
     </div>
+    // <div className="TaskList">
+    //   <header className="App-header">
+    //     <ul>
+    //       {tasks.map((item, index) => (
+    //         <li key={index}>
+    //           {item} 
+    //           <input type="checkbox" /> 
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   </header>
+    // </div>
   );
+  
 }
 
 export default TaskList;
