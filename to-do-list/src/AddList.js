@@ -1,15 +1,15 @@
 import "./AddList.css"
-import "./TaskList"
-import ListItems from "./ListItems"
 import React, { useState } from 'react';
 
 
 function AddList() {
-    const [isButtonPressed, setIsButtonPressed] = useState(false);
-    const handleButtonClick = () => {
-        setIsButtonPressed(true);
-    };
+  const [tasks, setTasks] = useState([]);
+  const [taskText, setTaskText] = useState('');
 
+  const addTask = () => {
+    setTasks([...tasks, taskText]);
+    setTaskText("");
+  };
 
 
 
@@ -17,9 +17,10 @@ function AddList() {
       <div className="AddList">
         
         <header className="Add-Listing">
-          <h3><input type = "button" value = "Add new task" onClick={handleButtonClick}/>
-          {isButtonPressed ? ListItems.push("new task") : null}
-          </h3>
+          <h3>
+            <input type = "text" value = {taskText}></input>
+            <input type = "button" value = "New task" onClick={addTask}/>
+            </h3>
         </header>
       </div>
     );

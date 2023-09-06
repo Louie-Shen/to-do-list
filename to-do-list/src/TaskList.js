@@ -1,20 +1,22 @@
 import "./TaskList.css"
-
+import tasks from "./AddList"
 function TaskList() {
-  const ListItems = [];
 
   return (
     <div className="TaskList">
       <header className="App-header">
-        <ul>{
-        ListItems.map((item, index) => (
-          <ul key={index}> {item} <input type = "checkbox"/> </ul>
-        ))}
-        <hr/>
-          </ul>
+        <ul>
+          {tasks.map((item, index) => (
+            <li key={index}>
+              {item} 
+              <input type="checkbox" /> 
+            </li>
+          ))}
+        </ul>
       </header>
     </div>
   );
+  
 }
 
 export default TaskList;
