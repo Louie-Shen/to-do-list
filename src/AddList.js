@@ -1,6 +1,5 @@
 import "./AddList.css"
-import React, { useState, useContext } from 'react';
-import { TaskContext } from './TaskContext';
+import React, { useState} from 'react';
 
 
 function AddList() {
@@ -14,16 +13,6 @@ function AddList() {
     console.log('Task added: ', taskText);
     setTaskText('');
   }
-  // const { tasks, setTasks } = useContext(TaskContext);
-  
-  // const [tasks, setTasks] = 
-  // useState([]);
-  // const [taskText, setTaskText] = useState('');
-
-  // const addTask = () => {
-  //   setTasks([...tasks, taskText]);
-  //   setTaskText("");
-  // };
 
 
 

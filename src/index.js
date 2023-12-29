@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import TaskList from './TaskList.js';
 import reportWebVitals from './reportWebVitals';
 import AddList from './AddList';
-import { TaskContextProvider } from './TaskContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TaskContextProvider>
-    <TaskList />
     <AddList />
-    </TaskContextProvider>
   </React.StrictMode>
   
 );
