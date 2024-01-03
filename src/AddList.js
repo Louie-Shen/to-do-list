@@ -1,8 +1,9 @@
 import "./AddList.css"
-import React, { useState} from 'react';
-
+import React, {useState} from 'react';
+import TaskItem from './TaskItem'
 
 function AddList() {
+  const [displayList, setDisplayList] = useState([]);
   const [taskText, setTaskText] = useState('');
 
   const handleInputChange = (event) => {
@@ -11,6 +12,8 @@ function AddList() {
 
   const addTask = () => {
     console.log('Task added: ', taskText);
+    setDisplayList([...displayList, taskText])
+    console.log('Display List:', displayList);
     setTaskText('');
   }
 
@@ -18,7 +21,9 @@ function AddList() {
 
     return (
       <div className="AddList">
-        
+          {displayList.map((task, index) => 
+          <TaskItem key={index} task={task} />
+        )}
         <header className="Add-Listing">
           <h3>
             <input type = "text" value = {taskText} onChange={handleInputChange} placeholder="Enter new task"></input>
