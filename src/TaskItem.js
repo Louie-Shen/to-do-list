@@ -9,8 +9,10 @@ const TaskItem = ({ task }) => {
         setIsChecked(!isChecked);
     };
 
+    const listItemClasses = isChecked ? 'listItem checked' : 'listItem notChecked'
+
     return (
-        <ul className = 'listItem'>
+        <ul className = {listItemClasses}>
             <input type="checkbox" 
             checked={isChecked}
             onChange={handleCheckboxChange}/>

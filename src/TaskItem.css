@@ -1,9 +1,18 @@
 .TaskItem {
     font-family: sans-serif;
-    margin-left: auto;
+    margin: 0;
 }
 
 .listItem {
-    border: 1px solid #000;
+    /* border: 1px solid #000000; */
     padding: 10px;
+    margin: 0;
 }
+
+.listItem.checked {
+    background-color: #aaffaa;
+  }
+  
+  .listItem.notChecked {
+    background-color: #ffaaaa;
+  }
