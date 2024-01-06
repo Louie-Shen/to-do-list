@@ -1,3 +1,4 @@
+import './TaskItem.css';
 import React, { useState } from 'react';
 
 const TaskItem = ({ task }) => {
@@ -9,12 +10,13 @@ const TaskItem = ({ task }) => {
     };
 
     return (
-        <ul>
+        <ul className = 'listItem'>
             <input type="checkbox" 
             checked={isChecked}
             onChange={handleCheckboxChange}/>
             {task}
-            <p>{isChecked ? 'Checked' : 'Not Checked'}</p></ul>
+            <p>{isChecked ? 'Checked' : 'Not Checked'}</p>
+        </ul>
         
     );
 };
