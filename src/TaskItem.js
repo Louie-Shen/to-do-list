@@ -12,21 +12,15 @@ const TaskItem = ({ task }) => {
     };
 
     const listItemClasses = isChecked ? 'listItem checked' : 'listItem notChecked'
-
+    
     return (
         <ul className = {listItemClasses}>
             <input type="checkbox" 
             checked={isChecked}
             onChange={handleCheckboxChange}/>
             {task}
-            {/* <form>
-                <label className = "options" for='options'>Extra Options:</label>
-                <select className = "options" id='options' name='extraOptions'>
-                    <option value="Due Date">Due Date</option>
-                    <option value="Time Needed">Time Needed</option>
-                </select>
-            </form> */}
-            <Options />
+            {!isChecked && <Options />}
+            
         </ul>
         
     );

@@ -1,9 +1,9 @@
 // Options.js
 import React, { useState } from 'react';
 
-function Options() {
+function Options({ isChecked }) {
   const DropdownInput = () => {
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState('');
 
     const handleOptionChange = (event) => {
       setSelectedOption(event.target.value);
@@ -16,16 +16,16 @@ function Options() {
           <option value="">Select...</option>
           <option value="date">Due Date</option>
           <option value="time">Time Needed</option>
-
-          {/* checking for which dropdown selected for input type */}
-          {selectedOption === 'date' && <input type="date" />}
-          {selectedOption === 'time' && <input type="time" />}
         </select>
+
+        {/* Render input based on selected option */}
+        {selectedOption === 'date' && <input type="date" />}
+        {selectedOption === 'time' && <input type="number" placeholder='minutes to finish task' />}
       </div>
     );
   };
 
-  return <DropdownInput />; // Return the DropdownInput component
+  return <DropdownInput />;
 }
 
 export default Options;
